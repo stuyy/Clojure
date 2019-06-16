@@ -37,6 +37,10 @@
   (tempFunc)
   (println (add))
   (println (add 1 2 3 4))
-
-
+  (def diff (subtract 10 34 50 43))
+  (println (str diff))
+  (println (factorial 1))
+  (println (factorial 0))
+  (println (factorial 3))
+  (println (factorial 10))
 )
