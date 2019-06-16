@@ -1,6 +1,7 @@
 (ns clj-test.core
   (:gen-class)
   (:require [clojure.string :as str])
+  (:require [clj-test.math :refer :all]) ; import our own math library
 )
 
 (def MY_NAME "ANSON FOONG") ; declare global variable STRING
@@ -12,7 +13,8 @@
 (defn callme [phone, state]
   (apply someFunction phone state)
 )
-
+; this function uses let to shadow the global var MY_NAME and sets it to "JACK RABBIT" in its lexical scope.
+; At the end of this function you can see it prints the original global string
 (defn tempFunc [] (
   let [MY_NAME "JACK RABBIT"]
     (println MY_NAME)
@@ -33,4 +35,8 @@
   (println myage)
   (callme "1" "2")
   (tempFunc)
+  (println (add))
+  (println (add 1 2 3 4))
+
+
 )
