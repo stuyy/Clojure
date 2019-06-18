@@ -22,25 +22,14 @@
   (println MY_NAME)
 )
 
+(defrecord Person [ firstname lastname age gender])
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!")
-
-  (def myname "Anson Foong")
-  (def age 21)
-  (def male true)
-  (println (greeting "Jake"))
-  (def myage (getAge 18)) ; declare a variable called myage and set it equal to getAge()
-  (println myage)
-  (callme "1" "2")
-  (tempFunc)
-  (println (add))
-  (println (add 1 2 3 4))
-  (def diff (subtract 10 34 50 43))
-  (println (str diff))
-  (println (factorial 1))
-  (println (factorial 0))
-  (println (factorial 3))
-  (println (factorial 10))
+  (def div (divide 9 3 3))
+  (def num (mult 3 3 3 3 3))
+  (println num)
+  (println div)
+  (println (pow 3 5))
 )
