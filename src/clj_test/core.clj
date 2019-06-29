@@ -32,4 +32,6 @@
   (println num)
   (println div)
   (println (pow 3 5))
+  (def matrix (list (list 1 2 3) (list 3 4 5) (list 4 5 6)))
+  (println matrix)
 )
