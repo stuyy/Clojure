@@ -46,5 +46,23 @@
     (def grades {:anson (list 90 96 93) :mitch (list 83 99 100) :kyle (list 77 28 90)})
     (println grades)
     (println (first grades))
+    
+    ; first - returns the first item of a collection
+    ; rest - returns the entire collection except for the first item
+    ; last - returns the last item of a collection
+
+    ; conj - add an item to a collection in natural form
+    ; count - get the size/count of a collection
+    ; get - get a value specified by a key from a map
+    ; keys - return all keys from a map
+    ; vals - return all values from a map
+
+
+    (def grades (assoc grades :drew '(99 77 89))) ; add drew to the current grades map and assign it to grades.
+    (println grades)
+
+    ; Remove mitch from the map
+    (def grades (dissoc grades :mitch))
+    (println (str "After removing mitch: " grades))
 )
 ; lein run -m clj-test.mylists
