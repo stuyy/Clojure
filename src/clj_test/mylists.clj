@@ -1,5 +1,6 @@
 (ns clj-test.mylists
     (:gen-class)
+    (:require [clojure.set :as set]) ; Import the clojure.set module as 'set'
 )
 
 (defn -main "Lists" [& args]
@@ -64,5 +65,21 @@
     ; Remove mitch from the map
     (def grades (dissoc grades :mitch))
     (println (str "After removing mitch: " grades))
+
+    (def setA #{:white :blue})
+    (def setB #{:black :gray :blue})
+    (println (str "Union of SetA and SetB " (set/union setA setB)))
+    (println (str "Interaction of SetA and SetB " (set/intersection setA setB)))
+
+    ; Convert a Map to a Set
+    (println (first (set grades))) ; Converts the 'grades' map to a set, and returns the first vector.
+    (println (set nameVector))
+
+    (def vectorOne ["Anson" "Jake" "Jake" "Ryan" "Paul" "Anthony" "Riley" "Blue" "Blue" "Blue"])
+    (println (str "Vector One: " vectorOne))
+    ; Convert this vector to a set. All duplicates should be removed.
+    ; This is a good way to remove duplicates from a list.
+    (def setVectorOne (set vectorOne))
+    (println setVectorOne)
 )
 ; lein run -m clj-test.mylists
