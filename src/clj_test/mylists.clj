@@ -35,5 +35,16 @@
     (println (:anson names)) ; Use the key itself as a function instead of using the 'get' function.
     (println (:lisa names))
     (println (:susan names))
+    ; Use keys and vals function to retrieve keys and values of a Map, respectively.
+    (def keysOfMap (keys names))
+    (println keysOfMap)
+    (def valsOfMap (vals names))
+    (println (str "Values of Name Map: " valsOfMap))
+    ; Remember that Collections are immutable, and whenever we want to update, add, remove, etc. a value, we are essentially returning a new Collection/Data Structure with the updated value in it.
+
+    ; Create a Map where each key maps to a list. The list will correspond to the person's grades.
+    (def grades {:anson (list 90 96 93) :mitch (list 83 99 100) :kyle (list 77 28 90)})
+    (println grades)
+    (println (first grades))
 )
 ; lein run -m clj-test.mylists
