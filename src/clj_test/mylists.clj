@@ -81,5 +81,18 @@
     ; This is a good way to remove duplicates from a list.
     (def setVectorOne (set vectorOne))
     (println setVectorOne)
+
+    (def v1 ["Anson" "Jack" "Michael"]) 
+    (def v2 ["Anson" "Jack" "Lisa" "Riley" "Sarah"])
+    (println (str "Difference: " (set/difference (set v1)(set v2))))
+    ; After executing, Michael will be the output.
+    (println (str "Intersection: " (set/intersection (set v1)(set v2))))
+    
+    ; Convert 'v1' to a Vector, and use 'get' to retrieve a value and check if nil was returned.
+    (def notInV1 (nil? (get (set v1) "Ryan"))) ; Convert v1 to a set, get "Ryan" from it, check if the returned value was nil, assign it to 'notInV1'
+    (println notInV1)
+
+    (println ((set v1) "Ryan"))
+    (println (contains? (set v1) "Anson"))
 )
 ; lein run -m clj-test.mylists
