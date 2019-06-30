@@ -56,6 +56,24 @@
     (when (every? odd? v3) (println "Every number is odd!"))
     
     (def odds (when (every? even? v3) (map inc v3))) ; If every element in v3 is even, then return a new list with all numbers incremented by 1.
-    (when (not (nil? odds)) (println odds)) ; When odds is not nil, print odds.
+    (when (not (nil? odds))
+        (println (str "Original List: " v3))
+        (println odds))
     
+    (let [name "Jeffrey"]
+        (cond
+            (= name "Jack") (println "My name Jack!")
+            (= name "Jeff") (println "My name Jeff!")
+            (= name "Max") (println "My name Max!")
+            (= name "Anson") (println "My name Anson!")
+            :else (println "Name not found!")
+        )
+    )
+    (let [foods "f"]
+        (case foods
+        "Pizza" (println "One pie costs $12.99!")
+        "Orange" (println "One orange is 50 cents!")
+        "Donut" (println "One donut is 99 cents!")
+        "unknown"))
+    (println "Hello?")
 )
