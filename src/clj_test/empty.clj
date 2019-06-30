@@ -47,4 +47,7 @@
         )
     )
 
+    (if-let [flag (every? #(= (mod % 2) 0) v3)]
+        (println "Every element in Vector v3 is even.") (println "There is some element in Vector v3 that is odd.")
+    )
 )
