@@ -32,4 +32,19 @@
 
     (def greater (if (some #(> % 100) (conj numbers 204)) (str "There is a number greater than 100") (str "There is no number greater than 100")))
     (println greater)
+
+    (let [greater (some #(> % 100) numbers)]
+        (if greater
+            (println "Greater than 100")
+            (println "Less than 100")
+        )
+    )
+
+    (let [greater (some #(> % 100) (conj numbers 101))]
+        (if greater
+            (println "Greater than 100")
+            (println "Less than 100")
+        )
+    )
+
 )
