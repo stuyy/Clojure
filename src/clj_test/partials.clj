@@ -7,5 +7,11 @@
     (def two (partial one 2))
     (def three (partial two 3))
     (println (three))
-    (println (three 4))
-)
+
+    ; Comp Functions
+    (def square #(* % %)) ; Anonymous function used to square a number.
+    (def getNum #(+ 0 %)) ; Anonymous function used to get a number.
+
+    (def result ((comp square square square) 2))
+    (println result)
+)   
