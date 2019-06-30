@@ -44,5 +44,25 @@
         (println person4)
     )
 
+    ; Destructures the map and binds the initial data structure using :as keyword to all-people
+    (let [{person1 :anson person2 :mark person3 :zoe :as all-people} people]
+        (println person1)
+        (println person2)
+        (println person3)
+        (println all-people)
+    )
 
+    ; Using :keys directive to get the keys and values of the people map.
+    (let [{:keys [anson mark zoe] :as all-people} people]
+        (println anson)
+        (println mark)
+        (println zoe)
+        (println (str "All: " all-people)))
+
+    ; Recall we can use a short-cut (:key map) to get the value of a key instead of using 'get'
+
+    ; define a function called 'peoples' that takes in a map. We know it takes in a map just by looking at the function signature. 
+    (defn peoples [{:keys [anson mark zoe]}]
+        (println (str anson mark zoe)))
+    (peoples people)
 )
