@@ -12,7 +12,7 @@
     ; Using if-do
 
     ; Generate a Random Number.
-
+    
     (def random (fn [n] (rand-int n)))
     (let [someNum (random 100)] ; generate a random number up to 100.
         (let [flag (> someNum 50)] ; Bind the express to flag.

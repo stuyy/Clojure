@@ -31,4 +31,6 @@
     (println (every? even? list1)) ; Check if every element in the list is even.
     (println (every? odd? list1)) ; Check if every element in the list is odd.
     
+    ; The probability of all elements in list1 being even or odd is .01%.
+    
 )
