@@ -21,4 +21,22 @@
     (reduce #(assoc %1 (first %2)(last %2)) {} ['(0 "Anson") '(1 "Sophia") '(2 "Cindy") '(3 "Madison")])
     (def myMap (toMap ['(0 "Anson" "Male") '(1 "Samantha" "Female")]))
     (println myMap)
+    ; Define a vector of lists.
+    (def vec1 [
+        '(0 "Anson" "Male" "Empire Commons")
+        '(1 "Sarah" "Female" "Liberty Terrace")
+        '(2 "Hannah" "Female" "Empire Commons")
+        '(3 "Stella" "Female" "Emprie Commons")
+        '(4 "Samantha" "Female" "State Quad")    
+    ])
+    
+    (println (toMap vec1))
+
+    ; Example from Book.
+    ; r is the vector we're building up.
+    ; x is the elements in the collection.
+    (def filterNil (fn [r x] (if (nil? x) r (conj r x))))
+    (println (reduce filterNil [] [:anson :sarah nil nil :richard :isabella :sophia :tommy nil :tanya :michelle :holly nil nil nil]))
+
+    ; You cannot reduce an infinite sequence, unlike `map`.
 )
