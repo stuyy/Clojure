@@ -37,6 +37,6 @@
     ; x is the elements in the collection.
     (def filterNil (fn [r x] (if (nil? x) r (conj r x))))
     (println (reduce filterNil [] [:anson :sarah nil nil :richard :isabella :sophia :tommy nil :tanya :michelle :holly nil nil nil]))
-
+    
     ; You cannot reduce an infinite sequence, unlike `map`.
 )
