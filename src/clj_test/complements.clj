@@ -34,8 +34,24 @@
     ; It returns the values that passed the predicate.
 
     (def numbers (take 25 (repeatedly #(rand-int 100)))) ; Note: rand-int is a function that produces side effects.
-    (println numbers)
-    (println (filter gt-fifty? numbers))
     (def nums2 (take 500 (repeatedly #(rand-int 250))))
-    (println (remove gt-fifty? nums2))
+
+    ; for returns a lazy sequence.
+
+    (println 
+        (for [ ppl ["anson" "thomas" "samatha"] ages [19 21 23]
+            :let [ ppl-desc (str ppl " is " ages " years old.") ]]
+            ppl-desc
+        )
+    )
+    ; passing multiple collections in 'for' will iterate over them in a nested fashion.
+    ; i.e [1 2 3] and [3 4 5] would yield a result with 1 and 3, 1 and 4, 1 and 5, 2 and 3, 2 and 4, etc..
+
+    (println
+        (for [ppl {:p1 "Anson" :p2 "Sarah"} 
+            :let [person ppl] ; Binding the ppl map to person. The  map entry becomes a vector i.e: [:p1 Anson]
+            :when(= (last person) "Anson")] ; use last since the vector only contains the key and value.
+            person            
+        )
+    )
 )
