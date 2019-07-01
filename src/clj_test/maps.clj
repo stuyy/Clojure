@@ -33,5 +33,11 @@
     (println mapToList)
 
     (def people ['(0 "Anson") '(1 "Jack") '(2 "Rachel") '(3 "Isabella")]) ; define a vector of lists of people and their ids
-    
+    (def peopleMap (toMap people))
+    (println peopleMap)
+    (println (keys peopleMap))
+    (println (vals peopleMap))
+
+    (reduce conj {} people)
+    (def des (fn [n] (assoc {} (first n)(last n))))  
 )
