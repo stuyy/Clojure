@@ -16,6 +16,7 @@
 )
 
 (defn gt-fifty? [n] (> n 50))
+
 (defn -main [& args]
     (println ((complement empty?) [])) ; returns false. 
     (def v1 ["Anson" "Jack" "MyName" "2" "3" 2.0 3.0 "4" 19])
@@ -54,4 +55,11 @@
             person            
         )
     )
+
+    ; Use flatten to return the contents of any nested collection to a single flattened sequence.
+    (println (flatten [[2 3 4][5 4][[45 67][22 34]]]))
+    (println (flatten (list (list [2 3] [4 5] [[3 4][5 6][2 3]])(list 17 28 19 31 22))))
+
+    (println (vec '(1 2 3))) ; Converts a list to a vector.
+    (println (into [] '(3 4 9 1))) ; Takes the list and conjs each element into a vector.
 )
