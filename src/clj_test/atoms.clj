@@ -31,4 +31,16 @@
     (reset! vectorNumbers [2 3 4])
     (swap! vectorNumbers conj 5)
     (println @vectorNumbers)
+    
+    ; Use future to run a process in another thread.
+
+    (def myNum (atom 0))
+    
+    (defn inc-print [v] (println v) (inc v))
+
+    (let [n 10]
+        (future (dotimes [_ n] (swap! myNum inc-print)))
+        (future (dotimes [_ n] (swap! myNum inc-print)))
+        (future (dotimes [_ n] (swap! myNum inc-print)))
+    )
 )
