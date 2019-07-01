@@ -15,6 +15,7 @@
     )
 )
 
+(defn gt-fifty? [n] (> n 50))
 (defn -main [& args]
     (println ((complement empty?) [])) ; returns false. 
     (def v1 ["Anson" "Jack" "MyName" "2" "3" 2.0 3.0 "4" 19])
@@ -28,5 +29,13 @@
     (def emptyVectors (filter empty? vectors))
     (println (str "There are " (count emptyVectors) " empty vectors!"))
 
-    
+    ; Filter takes in a predicate, and a collection. Filter goes through each element in the collection
+    ; and passes it to the predicate function.
+    ; It returns the values that passed the predicate.
+
+    (def numbers (take 25 (repeatedly #(rand-int 100)))) ; Note: rand-int is a function that produces side effects.
+    (println numbers)
+    (println (filter gt-fifty? numbers))
+    (def nums2 (take 500 (repeatedly #(rand-int 250))))
+    (println (remove gt-fifty? nums2))
 )
