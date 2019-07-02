@@ -17,6 +17,12 @@
     (def myAge (ref 21))
     (println (str "My age: " @myAge))
     ; Alter myAge 
-    (ageUp? myAge)
-    (println (str "Your age is now " @myAge))
+    
+    (let [n 2]
+        (future (dotimes [_ n] (ageUp? myAge))) ; thread 1
+        (future (dotimes [_ n] (ageUp? myAge))) ; thread 2
+    )
+
+    (future (println (str "Age is now " @myAge)))
+
 )
