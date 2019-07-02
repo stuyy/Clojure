@@ -63,4 +63,23 @@
             )
         )
     )
+    ; Define a function that takes in a collection that defines a person, the last value is assumed to be a boolean value
+    ; if true, return "is a boy", if false "is a girl"
+    (defn iter-people "Takes in a list, corresponding to the value of a map" [value]
+        (if (empty? value) nil
+            (if (last value) (str (first value) " is a boy") (str (first value) " is a girl"))
+        )
+    )
+
+    ; example 
+
+    (println (iter-people '("Joe" 21 true)))
+    (println (iter-people ["Rachel" 22 false]))
+    (println (iter-people '("Anson" 21 true)))
+
+    ; Let's say I want to apply our function to multiple tuples of people.
+
+    (println (map iter-people '(("Carol" 23 false) ("Victoria" 19 false) ("Adam" 25 true) ("Jordan" 29 true))))
+
+
 )
