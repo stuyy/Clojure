@@ -2,6 +2,7 @@
   (:gen-class)
   (:require [clojure.string :as str])
   (:require [clj-test.math :refer :all]) ; import our own math library
+  (:require [clj-test.ops :as ops])
 )
 
 (def MY_NAME "ANSON FOONG") ; declare global variable STRING
@@ -27,11 +28,19 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (def div (divide 9 3 3))
-  (def num (mult 3 3 3 3 3))
-  (println num)
-  (println div)
-  (println (pow 3 5))
-  (def matrix (list (list 1 2 3) (list 3 4 5) (list 4 5 6)))
-  (println matrix)
+  ;(def div (divide 9 3 3))
+  ;(def num (mult 3 3 3 3 3))
+  ;(println num)
+  ;(println div)
+  ;(println (pow 3 5))
+  ;(def matrix (list (list 1 2 3) (list 3 4 5) (list 4 5 6)))
+  ;(println matrix)
+  ;(println (transpose [[2 3 5][4 6 7][2 6 7]]))
+  (def m [[1 2 3][4 5 6][22 54 24]])
+  (ops/iter m)
+
+  ; Use apply to join strings.
+
+  (def myName ["An" "s" "on" " " "Fo" "o" "ng"])
+  (println (apply str myName))
 )

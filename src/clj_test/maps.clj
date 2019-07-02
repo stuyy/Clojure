@@ -38,6 +38,29 @@
     (println (keys peopleMap))
     (println (vals peopleMap))
 
-    (reduce conj {} people)
-    (def des (fn [n] (assoc {} (first n)(last n))))  
+
+    ; Using map to apply the function empty? on each collection.
+    (def emptyValues (map empty? (list [2 4] [] {} [4 5] {:p1 "Jack"} [2 4] '())))
+    (println emptyValues)
+
+    ; Use map to apply the anonymous function that adds 5 to each element in the collection.
+    (def newMap (map #(+ % 5) '(6 20 5 2 6 7 2 344)))
+    (println newMap)
+
+    (def people {:p1 '("Anson" 21 true) :p2 '("Jackie" 22 false) :p3 '("Sarah" 23 false)})
+    (println (keys people))
+    (println (vals people))
+    
+
+    (loop [key (keys people)]
+        (if (empty? key) nil
+            (do
+                (if (last ((first key) people)) 
+                    (println (str (first ((first key) people)) " is a boy"))
+                    (println (str (first ((first key) people)) " is a girl"))
+                )
+                (recur (rest key))
+            )
+        )
+    )
 )

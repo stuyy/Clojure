@@ -6,3 +6,7 @@
         (do (println (first m)) (recur (rest m)))
     ))
 )
+
+(defn transposeMatrix [coll]
+
+)
