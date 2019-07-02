@@ -63,6 +63,7 @@
             )
         )
     )
+
     ; Define a function that takes in a collection that defines a person, the last value is assumed to be a boolean value
     ; if true, return "is a boy", if false "is a girl"
     (defn iter-people "Takes in a list, corresponding to the value of a map" [value]
@@ -80,6 +81,15 @@
     ; Let's say I want to apply our function to multiple tuples of people.
 
     (println (map iter-people '(("Carol" 23 false) ("Victoria" 19 false) ("Adam" 25 true) ("Jordan" 29 true))))
+    
+    ; Other examples of map.
 
-
+    (println (map pos? '(1 -8 9 -45 -5 3 5 6 0 -2)))
+    (defn square [n] (* n n))
+    (println (map square [2 3 4 5 6 7 8 9]))
+    
+    ; 
+    (println (map + [1 2 3] (take 10 (iterate inc 5)))) ; 6 8 10
+    (println (map + [2 4 5] (iterate (partial + 10) 10))) ; 12 24 35
+    
 )
