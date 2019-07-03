@@ -8,5 +8,10 @@
 )
 
 (defn transposeMatrix [coll]
-
+    (loop [m coll]
+        ; for each vec in m.
+        (if (empty? m) nil
+            
+        )
+    )
 )

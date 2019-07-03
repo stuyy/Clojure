@@ -91,7 +91,7 @@
     ; Convert 'v1' to a Vector, and use 'get' to retrieve a value and check if nil was returned.
     (def notInV1 (nil? (get (set v1) "Ryan"))) ; Convert v1 to a set, get "Ryan" from it, check if the returned value was nil, assign it to 'notInV1'
     (println notInV1)
-
+    
     (println ((set v1) "Ryan"))
     (println (contains? (set v1) "Anson"))
 )
