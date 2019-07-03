@@ -13,9 +13,19 @@ behaves differently depending on the instance of the argument." [input]
     :else "Not found!"))
 
 
+(defmulti is-even-num ; Take in a number and check if it is odd or even.
+  (fn [n] (if (= (mod n 2) 0) "even" "odd")))
+
+(defmethod is-even-num "even" [n] (str n " is even")) ; If dispatch function returns even, we print out the number and say it's even
+
+(defmethod is-even-num "odd" [n] (str n " is odd")) ; If dispatch function returns odd, we print out the number and say it's odd
+
 (defn -main [& args]
   (println (who '()))
   (println (who {}))
   (println (who #{}))
   (println (who []))
+  (println (is-even-num 11))
+  (println (is-even-num 3))
+  (println (is-even-num 22))
 )
