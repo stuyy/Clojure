@@ -27,6 +27,8 @@
 (def harry-potter (Book. "Harry Potter and the Deathly Hallows" "J.K. Rowling" "2007" (atom 1) 759))
 (def percy-jackson (Book. "Percy Jackson and the Olympians: The Lightning Thief" "Rick Riordan" "2005" (atom 1) 377))
 
+(comment "Main difference between defrecords and deftypes when using protocols depends on how you want your data organized. With defrecords, it gives you the advantage of type-based dispatch. defrecords allow you to manipulate your data like maps.")
+
 (defn -main [& args]
   (println (class harry-potter))
   (println (class percy-jackson))
